@@ -1,0 +1,5 @@
+// Code file
+const test = strings.String_Key_OfYourChoice;
+// .locstring file
+;You comment goes here
+String_Key_OfYourChoice=meow

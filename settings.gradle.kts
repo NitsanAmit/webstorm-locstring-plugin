@@ -1,1 +1,1 @@
-rootProject.name = "webstorm-locstring-plugin"
+rootProject.name = "webstorm-locstaring-generator"

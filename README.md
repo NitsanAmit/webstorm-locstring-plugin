@@ -1,41 +1,24 @@
-# webstorm-locstring-plugin
-
-![Build](https://github.com/NitsanAmit/webstorm-locstring-plugin/workflows/Build/badge.svg)
-[![Version](https://img.shields.io/jetbrains/plugin/v/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/PLUGIN_ID)
-[![Downloads](https://img.shields.io/jetbrains/plugin/d/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/PLUGIN_ID)
-
-## Template ToDo list
-- [x] Create a new [IntelliJ Platform Plugin Template][template] project.
-- [ ] Get familiar with the [template documentation][template].
-- [ ] Verify the [pluginGroup](/gradle.properties), [plugin ID](/src/main/resources/META-INF/plugin.xml) and [sources package](/src/main/kotlin).
-- [ ] Review the [Legal Agreements](https://plugins.jetbrains.com/docs/marketplace/legal-agreements.html).
-- [ ] [Publish a plugin manually](https://plugins.jetbrains.com/docs/intellij/publishing-plugin.html?from=IJPluginTemplate) for the first time.
-- [ ] Set the Plugin ID in the above README badges.
-- [ ] Set the [Deployment Token](https://plugins.jetbrains.com/docs/marketplace/plugin-upload.html).
-- [ ] Click the <kbd>Watch</kbd> button on the top of the [IntelliJ Platform Plugin Template][template] to be notified about releases containing new features and fixes.
+# Locstring Generator
 
 <!-- Plugin description -->
-This Fancy IntelliJ Platform Plugin is going to be your implementation of the brilliant ideas that you have.
+A plugin for JetBrains IDEs, which helps extract literal JS/TS string values to a dedicated "*.locstring" file, for translation (i18n).
 
-This specific section is a source for the [plugin.xml](/src/main/resources/META-INF/plugin.xml) file which will be extracted by the [Gradle](/build.gradle.kts) during the build process.
+When the cursor is on a string constant inside a JavaScript / TypeScript file, the "**Extract string literal to locstring file**" intention action will become available.
+When invoked, a balloon dialog will pop open with option to modify the new locstring entry's key, value and comment.
 
-To keep everything working, do not remove `<!-- ... -->` sections. 
+The nearest locstring file to the edited code file will be automatically selected.
+If no locstring file was found within 3 directory levels up, a new locstring file path will be suggested.
 <!-- Plugin description end -->
 
 ## Installation
 
-- Using IDE built-in plugin system:
-  
-  <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Marketplace</kbd> > <kbd>Search for "webstorm-locstring-plugin"</kbd> >
-  <kbd>Install Plugin</kbd>
-  
-- Manually:
-
   Download the [latest release](https://github.com/NitsanAmit/webstorm-locstring-plugin/releases/latest) and install it manually using
   <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
 
+## TODO:
+* Mark literal strings as warnings inside .ts, .tsx, .js, .jsx files.
 
 ---
-Plugin based on the [IntelliJ Platform Plugin Template][template].
+Plugin created by @nitsanamit, based on the [IntelliJ Platform Plugin Template][template].
 
 [template]: https://github.com/JetBrains/intellij-platform-plugin-template
