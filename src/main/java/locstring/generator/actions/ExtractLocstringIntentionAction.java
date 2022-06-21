@@ -33,7 +33,7 @@ public class ExtractLocstringIntentionAction extends PsiElementBaseIntentionActi
 
     @Override
     public void invoke(@NotNull Project project, Editor editor, @NotNull PsiElement element) throws IncorrectOperationException {
-        final JComponent component = createBalloonComponent(project, element);
+        final JComponent component = new ExtractLocstringForm(project, element, this).getRootPane();
         showBalloon(project, editor, component);
     }
 
@@ -60,10 +60,6 @@ public class ExtractLocstringIntentionAction extends PsiElementBaseIntentionActi
     @Override
     public String getText() {
         return "Extract string literal to locstring file";
-    }
-
-    private JComponent createBalloonComponent(@NotNull Project project, @NotNull PsiElement element) {
-        return new ExtractLocstringForm(project, element, this).getRootPane();
     }
 
     private void showBalloon(@NotNull Project project, Editor editor, JComponent component) {
