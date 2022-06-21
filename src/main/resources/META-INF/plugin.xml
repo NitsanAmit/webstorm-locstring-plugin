@@ -9,7 +9,13 @@
     <extensions defaultExtensionNs="com.intellij">
         <intentionAction>
             <category>Locstring</category>
-            <className>locstring.generator.actions.ExtractLocstringAction</className>
+            <className>locstring.generator.actions.ExtractLocstringIntentionAction</className>
         </intentionAction>
     </extensions>
+    <actions>
+        <action class="locstring.generator.actions.ExtractLocstringAnAction" id="ExtractLocstringAnAction"
+                text="Extract Locstring Test...">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </action>
+    </actions>
 </idea-plugin>

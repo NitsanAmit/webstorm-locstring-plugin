@@ -32,12 +32,12 @@ public class ExtractLocstringForm implements ActionListener, IExtractLocstringFo
     private final FileChooserTextField fileChooserTextField;
     private final Project project;
     private final PsiElement element;
-    private final BalloonAction balloonAction;
+    private final DismissibleAction dismissibleAction;
 
-    public ExtractLocstringForm(@NotNull Project project, @NotNull PsiElement element, BalloonAction balloonAction) {
+    public ExtractLocstringForm(@NotNull Project project, @NotNull PsiElement element, DismissibleAction dismissibleAction) {
         this.project = project;
         this.element = element;
-        this.balloonAction = balloonAction;
+        this.dismissibleAction = dismissibleAction;
 
         rootPane = new JFrame();
         final GridLayout gridLayout = new GridLayout(5, 1, 4, 4);
@@ -65,7 +65,7 @@ public class ExtractLocstringForm implements ActionListener, IExtractLocstringFo
         hBox.add(extractButton);
 
         final JButton cancelButton = new JButton("Cancel");
-        cancelButton.addActionListener(e -> balloonAction.hideBalloon());
+        cancelButton.addActionListener(e -> dismissibleAction.dismiss());
         hBox.add(cancelButton);
 
         panelRoot.add(hBox);
@@ -123,7 +123,7 @@ public class ExtractLocstringForm implements ActionListener, IExtractLocstringFo
             PsiElement context = this.element.getContext();
             JSExpression expression = (JSExpression) JSPsiElementFactory.createJSExpression("strings."+ getKey(), context == null ? this.element : context);
             this.element.replace(expression);
-            this.balloonAction.hideBalloon();
+            this.dismissibleAction.dismiss();
         });
     }
 

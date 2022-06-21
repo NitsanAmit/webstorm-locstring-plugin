@@ -22,7 +22,7 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.*;
 import java.awt.*;
 
-public class ExtractLocstringAction extends PsiElementBaseIntentionAction implements PriorityAction, BalloonAction {
+public class ExtractLocstringIntentionAction extends PsiElementBaseIntentionAction implements PriorityAction, DismissibleAction {
 
     private Balloon balloon;
 
@@ -66,8 +66,7 @@ public class ExtractLocstringAction extends PsiElementBaseIntentionAction implem
         return new ExtractLocstringForm(project, element, this).getRootPane();
     }
 
-    @Override
-    public void showBalloon(@NotNull Project project, Editor editor, JComponent component) {
+    private void showBalloon(@NotNull Project project, Editor editor, JComponent component) {
         balloon = JBPopupFactory.getInstance().createBalloonBuilder(component)
                 .setShadow(true)
                 .setAnimationCycle(0)
@@ -89,7 +88,7 @@ public class ExtractLocstringAction extends PsiElementBaseIntentionAction implem
     }
 
     @Override
-    public void hideBalloon() {
+    public void dismiss() {
         if (this.balloon != null) {
             balloon.hide();
             this.balloon = null;
