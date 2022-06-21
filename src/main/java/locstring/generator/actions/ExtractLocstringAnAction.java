@@ -67,7 +67,7 @@ public class ExtractLocstringAnAction extends AnAction {
             super(project);
             this.project = project;
             this.element = element;
-            getWindow().setMinimumSize(JBUI.size(600, 250));
+            getWindow().setMinimumSize(JBUI.size(600, 200));
             setTitle("Extract String Literal to Locstring File");
             init();
         }
@@ -75,7 +75,7 @@ public class ExtractLocstringAnAction extends AnAction {
         @Override
         protected @Nullable JComponent createCenterPanel() {
             JRootPane rootPane = new ExtractLocstringForm(project, element, this).getRootPane();
-            rootPane.setPreferredSize(JBUI.size(600, 250));
+            rootPane.setPreferredSize(JBUI.size(600, 200));
             return rootPane;
         }
 
