@@ -14,8 +14,9 @@
     </extensions>
     <actions>
         <action class="locstring.generator.actions.ExtractLocstringAnAction" id="ExtractLocstringAnAction"
-                text="Extract Locstring Test...">
+                text="Extract String Literal to Locstring File">
             <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+            <keyboard-shortcut first-keystroke="control alt UP" keymap="$default"/>
         </action>
     </actions>
 </idea-plugin>

@@ -68,7 +68,7 @@ public class ExtractLocstringAnAction extends AnAction {
             this.project = project;
             this.element = element;
             getWindow().setMinimumSize(JBUI.size(600, 250));
-            setTitle("Testing");
+            setTitle("Extract String Literal to Locstring File");
             init();
         }
 
